@@ -1,0 +1,27 @@
+&{startPage:1 endPage:5 lineNumPerPage:-10086 isFtype:true printDest:pp inFilename:test}package main
+import (
+	"bufio"
+	"fmt"
+	"io"                     log info : page = 1
+	"os"
+	"os/exec"
+	"strings"
+	"github.com/spf13/pflag"
+)                                log info : page = 2
+type CliArgs struct {
+	startPage      int
+	endPage        int
+	lineNumPerPage int
+	isFtype        bool      log info : page = 3
+	printDest      string
+	inFilename     string
+}
+test for adding page feed here
+------- this is a new page       log info : page = 4
+*************************
+*************************
+*************************
+------- another new page
+********************************log info : page = 5
+end of the whole file
+output direct to destination : pp
