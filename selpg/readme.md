@@ -11,7 +11,7 @@ go 1.11 windows/amd64
 ```shell 
 # new_test is test file for this simple program, feel free to visit my blog for more detail 
 
-# create a excu
+# create a excuteable file named selpg.exe
 go build selpg.go
 
 # excute

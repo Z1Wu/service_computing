@@ -5,8 +5,9 @@ This repository is created to track the study process of the Service Computing C
 ## Course Resource
 
 Course website : https://pmlpml.github.io/ServiceComputingOnCloud/
-Blog: 
 
 ## Homework
 
-[blog](z1wu.github.io)
+see more details from the website
+
+[blog](https://z1wu.github.io)
