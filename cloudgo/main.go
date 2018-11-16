@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Z1Wu/testweb/service"
+	"github.com/Z1Wu/cloudgo/service"
 )
 
 func main() {

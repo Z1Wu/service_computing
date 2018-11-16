@@ -42,19 +42,24 @@ func initRoutes(mx *mux.Router, formatter *render.Render) {
 		}
 	}
 
+	// 练习：处理表单提交
+	mx.HandleFunc("/login", getLoginHandler(formatter)).Methods("POST")
+
 	// example 教程中提供的使用使用模板来输出index 信息
 	mx.HandleFunc("/", homeHandler(formatter)).Methods("GET")
 
 	// 练习： 使用模板生成手机销售表。
 	mx.HandleFunc("/testmoblie", phoneSaleHandler(formatter)).Methods("GET")
 
-	// 例子：使用 HTTP 包提供的静态服务器
-	mx.PathPrefix("/").Handler(http.FileServer(http.Dir(webRoot + "/assets/")))
 	// mx.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(webRoot+"/assets/"))))
 	mx.HandleFunc("/api/test", apiTestHandler(formatter)).Methods("GET")
 
 	// 练习：模仿 404 NotFound ERROR 设置一个 501 NotImplemented的 handler
 	mx.HandleFunc("/api/unknown", NotImplementedHandler()).Methods("GET")
+
+	// 例子：使用 HTTP 包提供的静态服务器
+	mx.PathPrefix("/").Handler(http.FileServer(http.Dir(webRoot + "/assets/")))
+
 }
 
 // NotImplementedHandler test
@@ -63,6 +68,8 @@ func NotImplementedHandler() http.HandlerFunc {
 	return NotImplemented
 }
 
+// NotImplemented handle the situation when server internal error occurs
 func NotImplemented(w http.ResponseWriter, r *http.Request) {
-	http.Error(w, " ERROR : 501 not Implemented", 501)
+	// 如何路由到对应的函数
+	http.Error(w, "ERROR : 501 not Implemented", 501)
 }
