@@ -1,0 +1,29 @@
+<html>
+<head>
+  <!-- <link rel="stylesheet" href="css/main.css"/> -->
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+          <th>手机品牌</th>
+          <th>手机销量</th>
+          <th>Q1</th> 
+          <th>Q2</th>
+          <th>Q3</th> 
+          <th>Q3同比</th>
+          <th>Q3比上季</th> 
+        </tr>  
+          {{range .Items}}
+          <tr>          
+            <th> {{.Name}} </th>
+            <th> {{.SaleNum}} </th>
+            <th> {{.Q1}}</th> 
+            <th>{{.Q2}}</th>
+            <th>{{.Q3}}</th>
+            <th>{{.Q3Before}}</th>
+            <th>{{.Q3Last}}</th>            
+          </tr>
+            {{end}}
+      </table>
+</body>
+</html>
